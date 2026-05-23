@@ -20,7 +20,11 @@ class SmsGatewayServiceProvider extends ServiceProvider
         if ($this->app->runningInConsole()) {
             $this->publishes([
                 __DIR__.'/../config/sms.php' => config_path('sms.php'),
-            ], 'sms-gateway-config');
+            ], ['sms-gateway-config', 'tad-configs']);
+
+            $this->publishes([
+                __DIR__.'/../resources/boost/skills' => base_path('.ai/skills'),
+            ], ['tad-boost-skills']);
         }
     }
 }
