@@ -2,6 +2,7 @@
 
 Laravel HTTP client package for the [Track Any Device](https://trackanydevice.com) SMS gateway device. Wraps the gateway REST API with a typed service class, automatic config merging, and a contract interface for easy mocking in tests.
 
+
 ---
 
 ## Requirements
