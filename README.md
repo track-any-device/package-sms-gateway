@@ -8,7 +8,7 @@ Laravel HTTP client package for the [Track Any Device](https://trackanydevice.co
 ## Requirements
 
 - PHP 8.3+
-- Laravel 11 or 12
+- Laravel 11, 12, or 13
 
 ---
 
