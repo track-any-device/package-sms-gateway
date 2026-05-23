@@ -1,32 +1,32 @@
 {
-    "name": "track-any-device/sms-gateway",
-    "description": "SMS gateway HTTP client for the Track Any Device platform.",
-    "version": "1.0.0",
-    "type": "library",
-    "license": "MIT",
-    "require": {
-        "php": "^8.3",
-        "illuminate/http": "^11.0|^12.0",
-        "illuminate/log": "^11.0|^12.0",
-        "illuminate/support": "^11.0|^12.0",
-        "nesbot/carbon": "^3.0"
+  "name": "track-any-device/sms-gateway",
+  "description": "SMS gateway HTTP client for the Track Any Device platform.",
+  "version": "1.0.0",
+  "type": "library",
+  "license": "MIT",
+  "require": {
+    "php": "^8.3",
+    "illuminate/http": "^11.0|^12.0",
+    "illuminate/log": "^11.0|^12.0",
+    "illuminate/support": "^11.0|^12.0",
+    "nesbot/carbon": "^3.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "TrackAnyDevice\\SmsGateway\\": "src/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "TrackAnyDevice\\SmsGateway\\SmsGatewayServiceProvider"
+      ]
     },
-    "autoload": {
-        "psr-4": {
-            "TrackAnyDevice\\SmsGateway\\": "src/"
-        }
-    },
-    "extra": {
-        "laravel": {
-            "providers": [
-                "TrackAnyDevice\\SmsGateway\\SmsGatewayServiceProvider"
-            ]
-        },
-        "laravel-boost": {
-            "skills": [
-                "resources/boost/skills/sms-gateway"
-            ]
-        }
-    },
-    "minimum-stability": "stable"
+    "laravel-boost": {
+      "skills": [
+        "resources/boost/skills/sms-gateway"
+      ]
+    }
+  },
+  "minimum-stability": "stable"
 }
