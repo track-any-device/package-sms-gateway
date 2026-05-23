@@ -32,11 +32,12 @@ jobs:
           version="${{ steps.latest.outputs.version }}"
           IFS='.' read -r major minor patch <<< "$version"
 
-          message="${{ github.event.head_commit.message }}"
+          # Only inspect the subject line to avoid matching keywords in the body
+          subject=$(git log -1 --format="%s")
 
-          if echo "$message" | grep -qiE "BREAKING[[:space:]]CHANGE|^[a-z]+(\(.+\))?!:"; then
+          if echo "$subject" | grep -qiE "BREAKING[[:space:]]CHANGE|^[a-z]+(\(.+\))?!:"; then
             new_version="$((major + 1)).0.0"
-          elif echo "$message" | grep -qE "^feat(\(.+\))?:"; then
+          elif echo "$subject" | grep -qE "^feat(\(.+\))?:"; then
             new_version="${major}.$((minor + 1)).0"
           else
             new_version="${major}.${minor}.$((patch + 1))"
