@@ -1,6 +1,7 @@
 {
     "name": "track-any-device/sms-gateway",
     "description": "SMS gateway HTTP client for the Track Any Device platform.",
+    "version": "1.0.0",
     "type": "library",
     "license": "MIT",
     "require": {
