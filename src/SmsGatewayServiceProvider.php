@@ -12,7 +12,6 @@ class SmsGatewayServiceProvider extends ServiceProvider
         $this->mergeConfigFrom(__DIR__.'/../config/sms.php', 'sms');
 
         $this->app->singleton(SmsGatewayContract::class, SmsGatewayService::class);
-        $this->app->alias(SmsGatewayContract::class, SmsGatewayService::class);
     }
 
     public function boot(): void
